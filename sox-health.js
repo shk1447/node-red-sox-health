@@ -74,9 +74,9 @@ module.exports = function (RED) {
       this.color = n.color;
       this.blink = n.blink;
 
-      this.metric = {};
+      this.metricItems = {};
       n.options.forEach((v, k) => {
-        this.metric[v.key] = {
+        this.metricItems[v.key] = {
           value: v.value,
           displayName: v.displayName,
           textColor: v.textColor,
@@ -93,7 +93,7 @@ module.exports = function (RED) {
       this.callback = function (req, res) {
         var msgid = RED.util.generateId();
         res._msgid = msgid;
-        node.send({ _msgid: msgid, req: req, res: createResponseWrapper(node, res), payload: { title: node.title, color: node.color, blink: node.blink, metric: node.metric } });
+        node.send({ _msgid: msgid, req: req, res: createResponseWrapper(node, res), payload: { title: node.title, color: node.color, blink: node.blink, metric: node.metricItems } });
       };
 
       var httpMiddleware = function (req, res, next) { next(); }

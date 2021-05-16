@@ -33,12 +33,12 @@
         tabs.addTab({
           id: "func-tab-config",
           iconClass: "fa fa-cog",
-          label: "DATABASE"
+          label: "HEALTH"
         });
         tabs.addTab({
           id: "func-tab-options",
           iconClass: "fa fa-cog",
-          label: "OPTIONS"
+          label: "METRIC"
         });
 
         tabs.activateTab("func-tab-config");
@@ -77,8 +77,8 @@
 
           $('<i style="color:#eee; cursor:move; margin-left:3px;" class="node-input-option-handle fa fa-bars"></i>').appendTo(row);
 
-          var displayNameField = $('<input/>', { class: "node-input-option-displayName", type: "text", style: "margin-left:7px; width:calc(25% - 20px);", placeholder: 'display name', value: styles.displayName }).appendTo(row);
-          var textColorField = $('<input/>', { class: "node-input-option-textColor", type: "color", style: "margin-left:7px; width:calc(25% - 20px);", placeholder: 'text color', value: styles.textColor }).appendTo(row);
+          var displayNameField = $('<input/>', { class: "node-input-option-displayName", type: "text", style: "margin-left:7px; width:calc(50% - 32px);", placeholder: 'display name', value: styles.displayName }).appendTo(row);
+          var textColorField = $('<input/>', { class: "node-input-option-textColor", type: "color", style: "margin-left:7px; width:calc(50% - 32px);", placeholder: 'text color', value: styles.textColor }).appendTo(row);
 
           var finalspan = $('<span/>', { style: "float:right; margin-right:8px;" }).appendTo(row);
           var changeButton = $('<a/>', { href: "#", class: "editor-button editor-button-small", style: "margin-top:7px; margin-left:5px;" }).appendTo(finalspan);
@@ -170,11 +170,11 @@
 
     <div id="func-tab-options" style="display:none">
       <div class="form-row node-input-option-container-row" style="margin-bottom: 0px;width: 100%">
-        <label for="node-input-width" style="vertical-align:top"><i class="fa fa-list-alt"></i> Headers</label>
+        <label for="node-input-width" style="vertical-align:top"><i class="fa fa-list-alt"></i> METRICS</label>
         <div id="node-input-option-container-div"
           style="box-sizing:border-box; border-radius:5px; height:257px; padding:5px; border:1px solid #ccc; overflow-y:scroll; display:inline-block; width:100%">
           <div style="width:calc(100% - 55px);height:32px;display: flex;align-items: center; justify-content: center; border: 1px solid #efefef; text-align: center; position:sticky; top:0; background: white;margin-left: 20px;">
-            <div style="flex:1;">Text</div>
+            <div style="flex:1;">Key</div>
             <div style="flex:1;">Value</div>
           </div>
           <ol id="node-input-option-container" style="list-style-type:none; margin:0;"></ol>
@@ -183,17 +183,15 @@
           style="box-sizing:border-box; border-radius:5px; height:257px; padding:5px; border:1px solid #ccc; overflow-y:scroll; display:inline-block; width:100%">
           <div
             style="width:calc(100% - 60px);height:32px;display: flex;align-items: center; justify-content: center; border: 1px solid #efefef; text-align: center; position:sticky; top:0; background: white;margin-left: 20px;">
-            <div style="flex:1;">Background</div>
-            <div style="flex:1;">Font Color</div>
-            <div style="flex:1;">Font Size</div>
-            <div style="flex:1;">Font Weight</div>
+            <div style="flex:1;">Display Name</div>
+            <div style="flex:1;">Text Color</div>
           </div>
           <ol id="node-input-style-container" style="list-style-type:none; margin:0;"></ol>
         </div>
       </div>
       <div class="form-row">
         <a href="#" class="editor-button editor-button-small" id="node-input-add-option"
-          style="margin-top:4px;"><i class="fa fa-plus"></i> <span>HEADER</span></a>
+          style="margin-top:4px;"><i class="fa fa-plus"></i> <span>METRIC</span></a>
       </div>
     </div>
 
